@@ -1,6 +1,7 @@
-package com.study.springV2.beans;
+package com.study.springV1.beans;
 
-public class BeanDefinitionRegistException extends Exception{
+public class BeanDefinitionRegistException extends Exception {
+
     private static final long serialVersionUID = 6056374114834139330L;
 
     public BeanDefinitionRegistException(String mess) {

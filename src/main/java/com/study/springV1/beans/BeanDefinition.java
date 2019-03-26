@@ -1,12 +1,9 @@
-package com.study.springV2.beans;
-
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
-import java.util.List;
-
+package com.study.springV1.beans;
 import org.apache.commons.lang3.StringUtils;
 
-
+/*
+Bean 定义接口
+ */
 public interface BeanDefinition {
     String SCOPE_SINGLETION = "singleton";
 
@@ -52,25 +49,14 @@ public interface BeanDefinition {
      */
     String getDestroyMethodName();
 
-    /* 下面的四个方法是供beanFactory中使用的 */
-
-    public Constructor<?> getConstructor();
-
-    public void setConstructor(Constructor<?> constructor);
-
-    public Method getFactoryMethod();
-
-    public void setFactoryMethod(Method factoryMethod);
-
     /**
      * 校验bean定义的合法性
      */
     default boolean validate() {
-        // 没定义class,工厂bean或工厂方法没指定，则不合法。
-        if (this.getBeanClass() == null) {
-            if (StringUtils.isBlank(getFactoryBeanName()) || StringUtils.isBlank(getFactoryMethodName())) {
+        // 没定义class且工厂bean或工厂方法没指定，则不合法。
+        if (this.getBeanClass() == null &&
+                (StringUtils.isBlank(getFactoryBeanName()) || StringUtils.isBlank(getFactoryMethodName()))) {
                 return false;
-            }
         }
 
         // 定义了类，又定义工厂bean，不合法
@@ -80,19 +66,5 @@ public interface BeanDefinition {
 
         return true;
     }
-
-    /**
-     * 获得构造参数定义 <br>
-     * add in V2
-     */
-    List<?> getConstructorArgumentValues();
-
-    /**
-     * 属性依赖<br>
-     * add in V2
-     *
-     * @return
-     */
-    List<PropertyValue> getPropertyValues();
 
 }

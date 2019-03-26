@@ -1,13 +1,11 @@
-package com.study.springV2.beans;
-
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
-import java.util.List;
-
+package com.study.springV1.beans;
 import org.apache.commons.lang3.StringUtils;
 
-
+/*
+一般bean定义的实现类
+ */
 public class GenericBeanDefinition implements BeanDefinition {
+
     private Class<?> beanClass;
 
     private String scope = BeanDefinition.SCOPE_SINGLETION;
@@ -19,14 +17,6 @@ public class GenericBeanDefinition implements BeanDefinition {
     private String initMethodName;
 
     private String destroyMethodName;
-
-    private Constructor<?> constructor;
-
-    private Method factoryMethod;
-
-    private List<?> constructorArgumentValues;
-
-    private List<PropertyValue> propertyValues;
 
     public void setBeanClass(Class<?> beanClass) {
         this.beanClass = beanClass;
@@ -53,6 +43,7 @@ public class GenericBeanDefinition implements BeanDefinition {
     public void setDestroyMethodName(String destroyMethodName) {
         this.destroyMethodName = destroyMethodName;
     }
+
 
     @Override
     public Class<?> getBeanClass() {
@@ -92,38 +83,6 @@ public class GenericBeanDefinition implements BeanDefinition {
     @Override
     public String getDestroyMethodName() {
         return this.destroyMethodName;
-    }
-
-    public List<?> getConstructorArgumentValues() {
-        return constructorArgumentValues;
-    }
-
-    public void setConstructorArgumentValues(List<?> constructorArgumentValues) {
-        this.constructorArgumentValues = constructorArgumentValues;
-    }
-
-    public List<PropertyValue> getPropertyValues() {
-        return propertyValues;
-    }
-
-    public void setPropertyValues(List<PropertyValue> propertyValues) {
-        this.propertyValues = propertyValues;
-    }
-
-    public Constructor<?> getConstructor() {
-        return constructor;
-    }
-
-    public void setConstructor(Constructor<?> constructor) {
-        this.constructor = constructor;
-    }
-
-    public Method getFactoryMethod() {
-        return factoryMethod;
-    }
-
-    public void setFactoryMethod(Method factoryMethod) {
-        this.factoryMethod = factoryMethod;
     }
 
     @Override

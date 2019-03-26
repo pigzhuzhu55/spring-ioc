@@ -1,4 +1,4 @@
-package com.example.springV2.beans;
+package com.study.springV2.beans;
 
 public class PropertyValue {
 

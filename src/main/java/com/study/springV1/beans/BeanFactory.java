@@ -1,7 +1,9 @@
-package com.study.springV2.beans;
+package com.study.springV1.beans;
 
+/*
+Bean工厂接口
+ */
 public interface BeanFactory {
-
     /**
      * 获取bean
      *
