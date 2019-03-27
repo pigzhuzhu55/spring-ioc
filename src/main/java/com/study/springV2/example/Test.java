@@ -23,7 +23,27 @@ public class Test {
 //
 //        Object instance = ct.newInstance(new Object[] { "aaaa", 4, new char[] { 'c' } });
 
-        /*
+
+//        GenericBeanDefinition bd2 = new GenericBeanDefinition();
+//        bd2.setBeanClass(HBean.class);
+//        List<Object> args2 = new ArrayList<>();
+//        args2.add("abean01");
+//        bd2.setConstructorArgumentValues(args2);
+//        bf.registerBeanDefinition("hbean", bd2);
+//        HBean hBean = (HBean) bf.getBean("hbean");
+//        System.out.println(hBean.name);
+//
+//        GenericBeanDefinition bd3 = new GenericBeanDefinition();
+//        bd3.setBeanClass(JBean.class);
+//        List<Object> args3 = new ArrayList<>();
+//        args3.add(hBean);
+//        bd3.setConstructorArgumentValues(args3);
+//        bf.registerBeanDefinition("jbean", bd3);
+//        JBean jBean = (JBean) bf.getBean("jbean");
+//        System.out.println(jBean);
+
+
+
         GenericBeanDefinition bd = new GenericBeanDefinition();
         bd.setBeanClass(GBean.class);
         List<Object> args1 = new ArrayList<>();
@@ -32,17 +52,6 @@ public class Test {
         bf.registerBeanDefinition("gbean", bd);
         GBean gBean = (GBean) bf.getBean("gbean");
         System.out.println(gBean.list);
-        */
-
-        GenericBeanDefinition bd = new GenericBeanDefinition();
-        bd.setBeanClass(HBean.class);
-        List<Object> args1 = new ArrayList<>();
-        args1.add("abean01");
-        bd.setConstructorArgumentValues(args1);
-        bf.registerBeanDefinition("hbean", bd);
-
-        HBean hBean = (HBean) bf.getBean("hbean");
-        System.out.println(hBean.name);
     }
 
 }
