@@ -10,9 +10,6 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * bean定义接口
  *
- * @author 动脑学院.Mike老师 QQ:3266399810
- *
- *         VIP课程咨询加可可老师 QQ：2729772006
  */
 public interface BeanDefinition {
 
