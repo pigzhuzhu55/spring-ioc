@@ -56,13 +56,13 @@ public class AOPTest {
         bf.registerBeanPostProcessor(aapc);
         // 向AdvisorAutoProxyCreator注册Advisor
         aapc.registAdvisor(
-                new AspectJPointcutAdvisor("myBeforeAdvice", "execution(* com.dn.spring.samples.ABean.*(..))"));
+                new AspectJPointcutAdvisor("myBeforeAdvice", "execution(* com.study.springV3.example.ABean.*(..))"));
         // 向AdvisorAutoProxyCreator注册Advisor
         aapc.registAdvisor(
-                new AspectJPointcutAdvisor("myMethodInterceptor", "execution(* com.dn.spring.samples.ABean.do*(..))"));
+                new AspectJPointcutAdvisor("myMethodInterceptor", "execution(* com.study.springV3.example.ABean.do*(..))"));
         // 向AdvisorAutoProxyCreator注册Advisor
         aapc.registAdvisor(new AspectJPointcutAdvisor("myAfterReturningAdvice",
-                "execution(* com.dn.spring.samples.ABean.do*(..))"));
+                "execution(* com.study.springV3.example.ABean.do*(..))"));
 
         bf.preInstantiateSingletons();
 
